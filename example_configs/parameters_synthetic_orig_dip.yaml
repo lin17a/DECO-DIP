@@ -1,0 +1,9 @@
+image:
+    path: example_images/spots_bare.tif
+    path_gt: example_images/noisy/spots_noisy_p5.00e-02g1.00e-02.tif
+    frame_range: [0, 1]
+loss:
+    loss_type_main: mse
+net:
+    learning_rate : 0.01
+    num_iter: 750

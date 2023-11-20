@@ -1,0 +1,29 @@
+image:
+    path: example_images/noisy/spots_noisy_p5.00e-02g1.00e-02.tif
+    path_gt: example_images/spots_bare.tif
+    frame_range: [0, 1]
+    num_runs: 2
+loss:
+    loss_type_main: mse
+    loss_type2: psf
+    loss2_fact: 0.7
+net:
+    learning_rate : 0.01
+    num_iter: 500
+psf:
+    ccdSize: 6540
+    depth: 0
+    dz: 0
+    experimental: false
+    lambdaEm: 609
+    lambdaEx: 561
+    magObj: 100
+    nor: 0
+    nslices: 1
+    numAper: 1.4
+    rindexObj: 1.518
+    rindexSp: 1.518
+    type: widefield
+    xysize: 384
+save_and_log:
+    verbosity: 1
