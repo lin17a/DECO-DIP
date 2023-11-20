@@ -4,7 +4,7 @@
 
 DECO-DIP denoises and deconvolves microscopy images. It is based on Deep image prior ([DIP](https://github.com/DmitryUlyanov/deep-image-prior)) [1] and does not require any training data. This version of DIP provides a new loss function, that includes an additional term to model the forward model of the imaging process. Additionally, the time dependence of image series can be used.
 
-Synthetic test data can be created using the code from [TDEntropyDeconvolution](https://github.com/IPMI-ICNS-UKE/TDEntropyDeconvolution/), which is a submodule of this repo [2].
+Synthetic test data can be created using the code from [TDEntropyDeconvolution](https://github.com/IPMI-ICNS-UKE/TDEntropyDeconvolution/), which is a submodule of this repo [2]. See [./docs/create_synthetic_data.md](./docs/create_synthetic_data.md) for more info.
 
 ## Usage
 
@@ -13,6 +13,7 @@ Synthetic test data can be created using the code from [TDEntropyDeconvolution](
     git clone --recurse-submodules https://github.com/lin17a/DECO-DIP
     ```
     in the command line.
+
     If you already cloned it and forgot to inialize the submodules, run:
     ```bash
     git submodule update --init --recursive
@@ -30,14 +31,16 @@ Synthetic test data can be created using the code from [TDEntropyDeconvolution](
     pip install -r requirements.txt
     ```
 
-4. Run the program. With the parameter param_file you can specify a yaml file containing the parameters. Default is ./parameters.yaml.
+4. Run the program. With the parameter param_path you can specify a yaml file containing the parameters. Default is ./parameters.yaml.
     ```
-    ./main.py --param_file parameters.yaml
+    ./main.py --param_path parameters.yaml
     ```
 
-    Example config files can be found in ./example_configs and default parameters are stored in [./default_parameters.yaml](./default_parameters.yaml).
+    If you want to run the program with more than one parameter file, you can specify a folder with parameter files. All yaml files in that folder are processed successively.
 
-    For detailed parameter descriptions see [./default_parameters.yaml](./default_parameters.yaml) and the [./docs](./docs) folder.
+    Example config files can be found in [./example_configs](./example_configs) and default parameters are stored in [./default_parameters.yaml](./default_parameters.yaml).
+
+    For detailed parameter descriptions see [./default_parameters.yaml](./default_parameters.yaml) and [./docs/parameter_description.md](./docs/parameter_description.md).
 
 ## References
 
