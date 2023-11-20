@@ -1,3 +1,6 @@
 [submodule "dip"]
 	path = dip
 	url = https://github.com/DmitryUlyanov/deep-image-prior
+[submodule "TDEntropyDeconvolution"]
+	path = TDEntropyDeconvolution
+	url = https://github.com/IPMI-ICNS-UKE/TDEntropyDeconvolution
