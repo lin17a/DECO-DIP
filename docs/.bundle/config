@@ -1,0 +1,2 @@
+---
+BUNDLE_BUILD__EVENTMACHINE: "-v 1.2.7 --with-cppflags=-I/usr/local/opt/openssl/include --with-openssl-dir=/usr/bin/ --with-openssl-config=/usr/lib/ssl"
