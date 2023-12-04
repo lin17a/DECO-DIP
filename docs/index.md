@@ -13,4 +13,8 @@ nav_order: 1
 
 DECO-DIP denoises and deconvolves microscopy images. It is based on Deep image prior ([DIP](https://github.com/DmitryUlyanov/deep-image-prior)) [1] and does not require any training data. This version of DIP provides a new loss function, that includes an additional term to model the forward model of the imaging process. Additionally, the time dependence of image series can be used.
 
-Synthetic test data can be created using the code from [TDEntropyDeconvolution](https://github.com/IPMI-ICNS-UKE/TDEntropyDeconvolution/), which is a submodule of this repo [2]. See [./docs/create_synthetic_data.md](./docs/create_synthetic_data.md) for more info.
+Synthetic test data can be created using the code from [TDEntropyDeconvolution](https://github.com/IPMI-ICNS-UKE/TDEntropyDeconvolution/), which is a submodule of this repo [2]. See this [Documentation](https://lin17a.github.io/DECO-DIP/) for more info.
+
+
+
+bla bla

@@ -162,5 +162,8 @@ cython_debug/
 # VSCode
 .vscode
 
+# docs site
+docs/_site
+
 ## results folder
 results/

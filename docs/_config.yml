@@ -1,11 +1,35 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: DECO-DIP
+logo: assets/images/logo.png
+description: A python tool to denoise and deconvolve microscopy images
 theme: just-the-docs
 
 url: https://lin17a.github.io/DECO-DIP
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  "DECO-DIP on GitHUb": https://github.com/lin17a/DECO-DIP
 
     # plugins:
     # - jekyll-default-layout
+#color_scheme: light
+color_scheme: purple
+
+math: mathjax
+
+favicon_ico: "/assets/images/favicon.png"
+
+callouts_level: quiet # or loud
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: grey-dk
+  warning:
+    title: Warning
+    color: red

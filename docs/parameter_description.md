@@ -1,3 +1,9 @@
+---
+layout: default
+title: Parameters
+nav_order: 1
+---
+
 # Parameters
 
 A short description for every parameter and their default values can be found in [../default_parameters.yaml](../default_parameters.yaml).
@@ -67,55 +73,55 @@ For further information see default_parameters.yaml and [DIP](https://github.com
 
 - `mse` (Loss function of the original DIP): mean squared error between output image and noisy image
 
-    $E(x, x_0) = || f_{\theta}(z) - x_0 ||^2 $, 
+    $$E(x, x_0)=\|f_{\theta}(z)-x_0\|^2$$, 
 
-    where $f_{\theta}(z)$ is the network output and $x_0$ is the noisy image.
+    where $$f_{\theta}(z)$$ is the network output and $$x_0$$ is the noisy image.
 
 - `psf`: mean squared error between output image convoluted with the point 
 spread function (PSF) and noisy image:
 
-    $E(x, x_0) = || f_{\theta}(z) * h - x_0 ||^2 $, 
+    $$E(x, x_0) = \| f_{\theta}(z) * h - x_0 \|^2 $$, 
 
-    where $f_{\theta}(z)$ is the network output, $h$ is the PSF and $x_0$ is the noisy image.
+    where $$f_{\theta}(z)$$ is the network output, $$h$$ is the PSF and $$x_0$$ is the noisy image.
 
 - `rl`: Richardson-Lucy functional:
 
-    $E(x, x_0) = \sum [(h * x) - x_0 \cdot \log(h * x)]$
+    $$E(x, x_0) = \sum [(h * x) - x_0 \cdot \log(h * x)]$$
 
         
 ### Combination of loss functions
 You can also combine two of the loss functions by using `loss_main` and `loss2`:
 
-$E(x, x_0) = \text{loss\\_fact2} \cdot \text{loss2} + (1-\text{loss\\_fact2}) \cdot \text{loss\\_main}$
+$$E(x, x_0) = \text{loss_fact2} \cdot \text{loss2} + (1-\text{loss_fact2}) \cdot \text{loss_main}$$
 
 `loss_fact2` defines the ratio of the two loss functions. 
 
 `loss_fact2` can be increased/decreased with every iteration with the parameter loss2_incr_fact:
 
-$\text{loss2\\_fact} := \text{loss2\\_fact} + (\text{loss2\\_incr\\_fact} \cdot \text{epoch})$
+$$\text{loss2_fact} := \text{loss2_fact} + (\text{loss2_incr_fact} \cdot \text{epoch})$$
 
 ### Explicit regularization
 
 You can use one of these two norms as an explicit regularizer (default is none):
 - `tv`: Total-Variation Norm
 
-    $R(x) = \sum |\nabla x| $ 
+    $$R(x) = \sum |\nabla x| $$ 
 
 - `tm`: Tikhonov-Miller Norm
 
-    $R(x) = \sum |\nabla x|^2 $ 
+    $$R(x) = \sum |\nabla x|^2 $$ 
 
 The influence regularizer can be configured with the parameter `regularizer_fact`:
 
-$r(x) = \text{regularizer\\_fact} \cdot R(x)$
+$$r(x) = \text{regularizer_fact} \cdot R(x)$$
 
 Analogous to the regulation of loss2, you can also change the `regularizer_fact` with every iteration:
 
-$\text{regularizer\\_fact} := \text{regularizer\\_fact} +  \text{regularizer\\_incr\\_fact} \cdot \text{epoch} $
+$$\text{regularizer_fact} := \text{regularizer_fact} +  \text{regularizer_incr_fact} \cdot \text{epoch} $$
 
-The regularization term $r(x)$ is added to the loss, so that this is the **full loss function**:
+The regularization term $$r(x)$$ is added to the loss, so that this is the **full loss function**:
 
-$E(x, x_0) = \text{loss\\_fact2} \cdot \text{loss2} + (1-\text{loss\\_fact2}) \cdot \text{loss\\_main} + \text{regularizer\\_fact}\cdot R(x)$
+$$E(x, x_0) = \text{loss_fact2} \cdot \text{loss2} + (1-\text{loss_fact2}) \cdot \text{loss_main} + \text{regularizer_fact}\cdot R(x)$$
 
 
 ## 6. psf
