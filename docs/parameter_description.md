@@ -1,23 +1,25 @@
 ---
 layout: default
 title: Parameters
-nav_order: 1
+nav_order: 3
 ---
 
 # Parameters
 
-A short description for every parameter and their default values can be found in [../default_parameters.yaml](../default_parameters.yaml).
+A short description for every parameter and their default values can be found in [default_parameters.yaml](https://github.com/lin17a/DECO-DIP/blob/main/default_parameters.yaml).
 
-Parameters are given in yaml format. There is one obligatory parameter, namely the path to the noisy image, that you want to restorate. So, the simplest parameter config looks like this:
+Parameters are given in yaml format. There is one obligatory parameter, namely the path to the noisy image, that you want to denoise and deconvolve. So, the simplest parameter config looks like this:
 
 ```
 image:
     path: path/to/your/image
 ```
 
-The parameters are split into 7 groups, which are explained in the following sections. Example configs can be found in [../example_configs](../example_configs).
+The parameters are split into 7 groups, which are explained in the following sections. Example configs can be found in [example_configs](https://github.com/lin17a/DECO-DIP/tree/main/example_configs).
 
-## 1. image
+## 1. Image
+The parameters in the `image` block define the input image(s).
+
 - `path` : path/to/your/image (obligatory)
     
     Path to the noisy image.
@@ -37,7 +39,7 @@ The parameters are split into 7 groups, which are explained in the following sec
 
     Define a number of repititions (runs are repeated for same image and same parameters). This can produce different results, because there is randomness in the process.
 
-## 2. time series
+## 2. Time Series
 `time series` parameters define the learning process when the input are time-dependent images.
 - `is_series`: bool
     
@@ -55,17 +57,17 @@ The parameters are split into 7 groups, which are explained in the following sec
 
     If `is_series` is `true` and this parameter is set to `true`, the program iterates over the images in the reverse order after the normal iteration in chronological order. In this case the network from the last frame, that was optimized during the forward iteration, is used as initialization for the previous frame. This is repeated for every frame in anti-chronological order.
 
-## 3. net
+## 3. Net
 `net` parameters define the network architecture and training process.
 
-For further information see default_parameters.yaml and [DIP](https://github.com/DmitryUlyanov/deep-image-prior).
+For further information see [default_parameters.yaml](https://github.com/lin17a/DECO-DIP/blob/main/default_parameters.yaml) and [DIP](https://github.com/DmitryUlyanov/deep-image-prior).
 
-## 4. superresolution
+## 4. Superresolution
 `superresolution` parameters configure a superresolution output image. This feature is not enabled per default.
 
-For further information see default_parameters.yaml and [DIP](https://github.com/DmitryUlyanov/deep-image-prior).
+For further information see [default_parameters.yaml](https://github.com/lin17a/DECO-DIP/blob/main/default_parameters.yaml) and [DIP](https://github.com/DmitryUlyanov/deep-image-prior).
 
-## 5. loss
+## 5. Loss
 
 `loss` parameters define the loss function.
 
@@ -124,14 +126,14 @@ The regularization term $$r(x)$$ is added to the loss, so that this is the **ful
 $$E(x, x_0) = \text{loss_fact2} \cdot \text{loss2} + (1-\text{loss_fact2}) \cdot \text{loss_main} + \text{regularizer_fact}\cdot R(x)$$
 
 
-## 6. psf
+## 6. PSF
 `psf` parameters define the point spread function (PSF). 
 
-For further information see [../default_parameters.yaml](../default_parameters.yaml) and  [TDEntropyDeconvolution](https://ipmi-icns-uke.github.io/TDEntropyDeconvolution/General/2-usage.html#point-spread-function)
+For further information see [default_parameters.yaml](https://github.com/lin17a/DECO-DIP/blob/main/default_parameters.yaml) and  [TDEntropyDeconvolution](https://ipmi-icns-uke.github.io/TDEntropyDeconvolution/General/2-usage.html#point-spread-function)
 
-## 7. save_and_log
+## 7. Saving and Logging
 
-These parameters define where the results are stored and how much output is produced.
+These parameter group is called `save_and_log` and defines where the results are stored and how much output is produced.
 
 - `orig_img_path` : path/to/your/orig/image_png
 
@@ -147,7 +149,7 @@ These parameters define where the results are stored and how much output is prod
 
 - `csv_path` : path/to/your/csv
 
-    You can store parameters and the resulting losses in a csv file. Defaults to null.
+    You can store parameters and the resulting losses in a csv file. Defaults to null (don't save).
 
 - `tensorboard` : bool 
     
