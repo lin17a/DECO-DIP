@@ -11,7 +11,7 @@ aux_links:
     # plugins:
     # - jekyll-default-layout
 #color_scheme: light
-color_scheme: purple
+color_scheme: blue
 
 math: mathjax
 
