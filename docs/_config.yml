@@ -3,10 +3,10 @@ logo: assets/images/logo.png
 description: A python tool to denoise and deconvolve microscopy images
 theme: just-the-docs
 
-url: https://lin17a.github.io/DECO-DIP
+url: https://IPMI-ICNS-UKE.github.io/DECO-DIP
 
 aux_links:
-  "DECO-DIP on GitHUb": https://github.com/lin17a/DECO-DIP
+  "DECO-DIP on GitHUb": https://github.com/IPMI-ICNS-UKE/DECO-DIP
 
     # plugins:
     # - jekyll-default-layout
