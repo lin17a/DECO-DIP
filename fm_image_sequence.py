@@ -85,11 +85,12 @@ class ImageSequence():
                                         frame_number = i)
                 self.images.extend(img_list)
 
-        # there is only one noisy image
+        # there is only one noisy image (and optiionally a ground truth)
         else:
             img_list = self.prepare_imgs(self.path_noisy,
                                     self.save_path_noisy,
-                                    self.save_path_denoised)
+                                    self.save_path_denoised,
+                                    self.path_gt)
             self.images.extend(img_list)
 
         # adjust frame range
