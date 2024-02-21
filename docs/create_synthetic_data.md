@@ -1,3 +1,9 @@
+---
+layout: default
+title: Synthetic Data
+nav_order: 4
+---
+
 # Synthetic Data
 
 Synthetic data can be created with ../TDEntropyDeconvolution/example_synthetic.py
